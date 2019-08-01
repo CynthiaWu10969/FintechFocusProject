@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="FlaskWebpages/app/static/style.css" type="text/css" />
+</head>
+
+<body>
+    <!--image-->
+    <div class="Title center">
+        <h1> Climate Change </h1>
+        <h4>Now you have survive in the United States climate. Please buy products to save the environment! </h4>
+    </div>
+    <div class="container row">
+        <div class="col l6">
+            <table style="width:100%">
+                <tr>
+                    <th>Eco-friendly Products</th>
+                    <th>Why we need these products</th>
+                    <th>Price of product</th>
+                </tr>
+                <tr>
+                    <td>Coral Reef Safe Sunscreen</td>
+                    <td>The coral reefs are being bleached, the water temperature is too warm so, the algae is being expelled out of the coral. Resulting in less marine life. Also, the oxygen for land inhabitants demished.</td>
+                    <td>A 6 ounce bottle costs $17 </td>
+
+                </tr>
+                <tr>
+                    <td>Metal Straws</td>
+                    <td> Plastic, in general, does not decompose. It endangers marine life, popularly endangers turtles and fish.</td>
+                    <td> 8 reuseable straws cost $8</td>
+                </tr>
+                <tr>
+                    <td>Recycled pencils</td>
+                    <td> 82,000 trees are cut down a year to make pencils. The lost of these many trees are limiting our oxygen. </td>
+                    <td> A pack of 24 pencils cost $11</td>
+
+                </tr>
+
+                <tr>
+                    <td>Reusable Water Bottles (Nalgene)</td>
+                    <td> Nalgenes are made of a harder form of plastic, recycled plastic, to constanly reuse. If you use a nalgene bottle in replacement of a disposable water bottle, in a year you will save 167 disposable bottles going into the landfills or
+                        in the water</td>
+                    <td> 1 nalgene for $6</td>
+
+                </tr>
+                <tr>
+                    <td>Tote Bag</td>
+                    <td>Tote bags are out of sturdy cloth, it replaces disposable plastic bags.</td>
+                    <td> 1 tote bag costs $5 </td>
+
+                </tr>
+
+            </table>
+        </div>
+        <div class='col l6'>
+            <form method='post' action="/weatherfinal">
+                <p style="margin-left: 20px;"><b>Choose 2 products:</b>
+                    <select id="DD" name="weather1" method='POST'>
+                  <option value="coralreef">Coral Reef Safe Sunscreen</option>
+                  <option value="metalstraws">Metal Straws</option>
+                  <option value="pencils">Recycled pencils</option>
+                  <option value="bottles">Reusable Water Bottles (Nalgene)</option>
+                   <option value="bag">Tote Bag</option>
+                </select>
+                    <br><br><select id="DD" name="weather2" method='POST'>
+                  <option value="coralreef">Coral Reef Safe Sunscreen</option>
+                  <option value="metalstraws">Metal Straws</option>
+                  <option value="pencils">Recycled pencils</option>
+                  <option value="bottles">Reusable Water Bottles (Nalgene)</option>
+                   <option value="bag">Tote Bag</option>
+                </select>
+                    <input type="submit"> </p>
+
+            </form>
+        </div>
+        <table style="width:50%">
+
+
+        </table>
+    </div>
+    <style>
+        #DD {
+            display: inline;
+        }
+    </style>
+    <!--</div>-->
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Welcome!</title> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/static/style.css" type="text/css" />
+    </head>
+    <body background = "../static/images/sm2.png">
+        <!--image-->
+        <b>
+        <div class="Title">
+             <h1>Stock Market</h1>
+        </div>
+        <div class="container">
+            <div>
+                <table style="width:100%">
+                  <tr>
+                    <th>Stock Name</th>
+                    <th>Symbol</th> 
+                  
+                  </tr>
+                  <tr>
+                    <td>Apple</td>
+                    <td>AAPL</td> 
+                   
+                  </tr>
+                  <tr>
+                    <td>Verizon</td>
+                    <td>VZ</td> 
+                  </tr>
+                  <tr>
+                    <td>Facebook</td>
+                    <td>FB</td> 
+                   
+                  </tr>
+                  
+                  <tr>
+                    <td>Tesla</td>
+                    <td>TSLA</td> 
+                   
+                  </tr>
+                  <tr>
+                    <td>Microsoft</td>
+                    <td>MSFT</td> 
+                   
+                  </tr>
+                </table>
+            </div>
+            <div>
+               
+               <p> After you invested in the stock: {{symbol}}, your balance is now: {{finalbalance}}
+               </p>
+               <br><br><br>
+               <a href="/index" class="waves-effect waves-light btn">Home</a>
+               <a href="/weather" class="waves-effect waves-light btn">Continue</a>
+               <footer class="footer">  
+                <table>
+                    <thead>
+                      <tr>
+                          <th>Balance</th>
+                          <th>Health Index</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr>
+                        <td>${{finalbalance}}</td>
+                        <td>100</td>
+                        <input type="hidden" value={{finalbalance}} name="balance">
+                        <input type="hidden" value={{100}} name="health_index">
+                      </tr>
+                    </tbody>
+                  </table>
+                  <ul>
+											<li>&copy; Kaiden. All rights reserved.</li>
+									</ul>
+									</footer>
+            </div>
+        </div>
+        </b>
+    </body>
+</html>

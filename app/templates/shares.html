@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="/static/style.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body background = "../static/images/sm2.png">
+        <!--image-->
+        <b>
+        <div class="Title">
+             <h1>Stock Market</h1>
+        </div>
+        <div class="container">
+            <div>
+                <table style="width:100%">
+                  <tr>
+                    <th>Stock Name</th>
+                    <th>Symbol</th> 
+                  
+                  </tr>
+                  <tr>
+                    <td>Apple</td>
+                    <td>AAPL</td> 
+                   
+                  </tr>
+                  <tr>
+                    <td>Verizon</td>
+                    <td>VZ</td> 
+                  </tr>
+                  <tr>
+                    <td>Facebook</td>
+                    <td>FB</td> 
+                   
+                  </tr>
+                  
+                  <tr>
+                    <td>Tesla</td>
+                    <td>TSLA</td> 
+                   
+                  </tr>
+                  <tr>
+                    <td>Microsoft</td>
+                    <td>MSFT</td> 
+                   
+                  </tr>
+                </table>
+            </div>
+            <div>
+               
+                <p> With your balance you can buy {{all_shares}} shares of stock {{symbol}}. </p>
+                <form method= "post" action="/finalbalance">
+                    <br>Choose a week to sell: (Please select a Friday!)
+                    <label for="week"> </label>
+                    <input type="date" name="sell_day" id="camp-week"
+                     min="1998-01-01" max="2019-07-31" required>
+                     <br>
+                    <input type="hidden" value={{initial_day}} name="initial_day">
+                    <input type = "hidden" value={{all_shares}} name="all_shares">
+                    <input type = "hidden" value={{symbol}} name="symbol">
+                    <input type = "hidden" value={{initial_balance}} name="initial_balance">
+                    <br> How many shares do you want to buy? <input type = "text" name = "shares"></br>
+                    <br> <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                    </button></br>
+                       <footer class="footer">  
+                <table>
+                    <thead>
+                      <tr>
+                          <th>Balance</th>
+                          <th>Health Index</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr>
+                        <td>${{initial_balance}}</td>
+                        <td>100</td>
+                        <input type="hidden" value={{10000}} name="initial_balance">
+                        <input type="hidden" value={{100}} name="health_index">
+                      </tr>
+                    </tbody>
+                  </table>
+                  <ul>
+											<li>&copy; Kaiden. All rights reserved.</li>
+									</ul>
+									</footer>               
+                    
+                </form>
+            </div>
+        </div>
+        </b>
+    </body>
+</html>
