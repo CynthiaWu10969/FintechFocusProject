@@ -29,7 +29,8 @@ def cong():
         return "Please fill out the form."
     else:
         userdata = dict(request.form)
-    return render_template('cong.html', balance = userdata['balance'], health_index = userdata['health_index'])
+        print(userdata)
+        return render_template('cong.html', balance = userdata['balance'], health_index = userdata['health_index'])
     
 @app.route('/weather', methods = ['GET', 'POST'])
 def weather():

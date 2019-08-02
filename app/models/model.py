@@ -48,8 +48,8 @@ def weathercalculator(balance, health_index, product1, product2):
     {'product': "coralreef", 'price': 17, 'increaseindex': 6},
     {'product': "metalstraws", 'price': 8, 'increaseindex': 3},
     {'product': "pencils", 'price': 11, 'increaseindex': 4},
-    {'product': "bottles", 'price': 6, 'increaseindex': 2},
-    {'product': "bag", 'price': 5, 'increaseindex ': 1}
+    {'product': "bottles", 'price': 6, 'increaseindex': 2}, 
+    {'product': "bag", 'price': 5, 'increaseindex': 1}
     ]
     for product in climate_products:
         if product1 == product['product']:
@@ -59,5 +59,4 @@ def weathercalculator(balance, health_index, product1, product2):
         if product2 == product['product']:
             balance = balance - product['price']
             health_index = health_index + product['increaseindex']
-            print("hi")
     return ([balance, health_index])
