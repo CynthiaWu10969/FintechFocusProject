@@ -31,5 +31,33 @@ def balance_calculator(shares_all, shares, symbol, initial_balance, initial_day,
     else:
         return "Please enter a valid shares"
         
+        
 # print(shares_calculator('AAPL', 2900, "1990"))
 # print(balance_calculator(29, 25, 'AAPL', 2900, "1990", "2019"))
+
+climate_products = [
+    {'product': "Coral Reef Safe Sunscreen", 'price': 17, 'increaseindex': 6},
+    {'product': "Metal Straws", 'price': 8, 'increaseindex': 3},
+    {'product': "Recycled Pencils", 'price': 11, 'increaseindex': 4},
+    {'product': "Reusable Water Bottles", 'price': 6, 'increaseindex': 2},
+    {'product': "Tote Bag", 'price': 5, 'increaseindex ': 1}
+    ]
+    
+def weathercalculator(balance, health_index, product1, product2):
+    climate_products = [
+    {'product': "coralreef", 'price': 17, 'increaseindex': 6},
+    {'product': "metalstraws", 'price': 8, 'increaseindex': 3},
+    {'product': "pencils", 'price': 11, 'increaseindex': 4},
+    {'product': "bottles", 'price': 6, 'increaseindex': 2},
+    {'product': "bag", 'price': 5, 'increaseindex ': 1}
+    ]
+    for product in climate_products:
+        if product1 == product['product']:
+            balance = balance - product['price']
+            health_index = health_index + product['increaseindex']
+    for product in climate_products:    
+        if product2 == product['product']:
+            balance = balance - product['price']
+            health_index = health_index + product['increaseindex']
+            print("hi")
+    return ([balance, health_index])

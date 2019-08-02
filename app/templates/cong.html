@@ -37,9 +37,10 @@
 										<li><a href="/aboutus">About Us</a></li>
 									</ul>
 								</li>
-								<li><a href="stockmarket.html">Stock Market</a></li>
-								<li><a href="weather.html">Climate Change Products</a></li>
-								<li><a href="cong.html">Congratulations</a></li>
+								<li><a href="/stockmarket">Stock Market</a></li>
+								<li><div class="popup" onclick="myFunction()">Eco-Friendly Products
+  								<span class="popuptext" id="myPopup">Please follow the steps in start!</span>
+								</div></li>
 							</ul>
 						</nav>
 
@@ -54,9 +55,9 @@
 								<h2><a href="#">Congratulations</a></h2>
 								<p>
 									You made it through the year with</p>
-									<p><b>Balance: </b></p>
-									<p><b>Health: </b></p>
-									<p>You have made a tremendous change the environment.</p>
+									<p><b>Balance: {{balance}}</b></p>
+									<p><b>Health Index: {{health_index}}</b></p>
+									<p>Thank you for your contribution to the environment!</p>
 								</p>
 							</header>
 							

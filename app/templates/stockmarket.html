@@ -4,11 +4,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="/static/style.css" type="text/css" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One&display=swap" rel="stylesheet">
     </head>
     <body background = "../static/images/sm2.png">
         <b>
         <div class="Title">
-             <h1>Stock Market</h1>
+             <h1 class="stockmarket">Stock Market</h1>
         </div>
         <div class="container">
             <div>
@@ -48,10 +49,10 @@
             </div>
             <div>
                
-                <p>Start your game here:</p>
+                <p>Pick your stocks to start:</p>
                 <form method= "post" action="/shares">
                     Stock symbol:
-                    <input type="text" name="symbol" />
+                    <input type="text" name="symbol" required>
                     <input type="hidden" value={{10000}} name="initial_balance">
                     <input type="hidden" value={{100}} name="health_index">
                     <br>Choose a week to buy: (Please select a Friday!)
@@ -66,19 +67,19 @@
                 <table>
                     <thead>
                       <tr>
-                          <th>Balance</th>
-                          <th>Health Index</th>
+                          <th class="center">Balance</th>
+                          <th class="center">Health Index</th>
                       </tr>
                     </thead>
             
                     <tbody>
                       <tr>
-                        <td>$10,000</td>
-                        <td>100</td>
+                        <td class="center">$10,000</td>
+                        <td class="center">100</td>
                       </tr>
                     </tbody>
                   </table>
-                  <ul>
+                  <ul class = "leftfooter">
 											<li>&copy; Kaiden. All rights reserved.</li>
 									</ul>
 									</footer>

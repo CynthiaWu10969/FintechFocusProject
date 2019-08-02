@@ -3,12 +3,14 @@
         <title>Welcome!</title> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="/static/style.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body background = "../static/images/sm2.png">
         <!--image-->
         <b>
         <div class="Title">
-             <h1>Stock Market</h1>
+             <h1 class="stockmarket">Stock Market</h1>
         </div>
         <div class="container">
             <div>
@@ -45,32 +47,41 @@
                   </tr>
                 </table>
             </div>
-            <div>
-               
-               <p> After you invested in the stock: {{symbol}}, your balance is now: {{finalbalance}}
-               </p>
-               <br><br><br>
+            <div class="verticalcenter center">
+               <br>
+               <h5 class="darkgreen balance"> After you invested in the stock: {{symbol}}, your balance is now:</h5> 
+               <h5 class="darkgreen balance">${{finalbalance}}
+               </h5>
+              <p>&nbsp; 
+              <p>&nbsp; 
+              <p>&nbsp; 
+              <p>&nbsp; 
                <a href="/index" class="waves-effect waves-light btn">Home</a>
-               <a href="/weather" class="waves-effect waves-light btn">Continue</a>
+               <form method="POST" action="/weather">
+                        <input type="hidden" value={{finalbalance}} name="balance">
+                        <input type="hidden" value={{100}} name="health_index">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Continue
+                      <i class="material-icons right">send</i>
+              </form>
+                        </div>
                <footer class="footer">  
                 <table>
                     <thead>
                       <tr>
-                          <th>Balance</th>
-                          <th>Health Index</th>
+                          <th class="center">Balance</th>
+                          <th class="center">Health Index</th>
                       </tr>
                     </thead>
             
                     <tbody>
                       <tr>
-                        <td>${{finalbalance}}</td>
-                        <td>100</td>
-                        <input type="hidden" value={{finalbalance}} name="balance">
-                        <input type="hidden" value={{100}} name="health_index">
+                        <td class="center">${{finalbalance}}</td>
+                        <td class="center">100</td>
+                        
                       </tr>
                     </tbody>
                   </table>
-                  <ul>
+                  <ul class = "leftfooter">
 											<li>&copy; Kaiden. All rights reserved.</li>
 									</ul>
 									</footer>

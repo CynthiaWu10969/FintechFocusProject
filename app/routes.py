@@ -23,13 +23,23 @@ def aboutgame():
 def aboutus():
     return render_template('aboutus.html')
 
-@app.route('/cong')
+@app.route('/cong', methods=['GET', 'POST'])
 def cong():
-    return render_template('cong.html')
+    if request.method == "GET":
+        return "Please fill out the form."
+    else:
+        userdata = dict(request.form)
+    return render_template('cong.html', balance = userdata['balance'], health_index = userdata['health_index'])
     
-@app.route('/weather')
+@app.route('/weather', methods = ['GET', 'POST'])
 def weather():
-    return render_template('weather.html')
+    if request.method == "GET":
+        return "Please fill out the form."
+    else:
+        indices = dict(request.form)
+        balance = indices['balance']
+        health_index = indices['health_index']
+        return render_template('weather.html', balance = balance, health_index = health_index)
     
 @app.route('/shares', methods = ['GET', 'POST'])
 def shares():
@@ -51,7 +61,7 @@ def finalbalance():
         total_sharesfinal = float(userdata['all_shares'])
         final_balance = round(model.balance_calculator(total_sharesfinal, float(userdata['shares']), userdata['symbol'], float(userdata['initial_balance']), userdata['initial_day'], userdata['sell_day']), 2)
         return render_template('finalbalance.html', finalbalance = final_balance, symbol = userdata['symbol'])
-        
+
 @app.route('/weatherfinal', methods = ['GET', 'POST'])
 def weatherfinal():
     if request.method == "GET":
@@ -59,4 +69,6 @@ def weatherfinal():
     else:
         userdata = dict(request.form)
         print(userdata)
-        return "hi"
+        weatherlist1 = model.weathercalculator(float(userdata['balance']), float(userdata['health_index']), userdata['product1'], userdata['product2'])
+        print(weatherlist1)
+        return render_template('weatherfinal.html', balance = weatherlist1[0], health_index = weatherlist1[1], product1 = userdata['product1'], product2 = userdata['product2'])

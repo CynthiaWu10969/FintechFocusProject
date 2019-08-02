@@ -4,12 +4,22 @@
     <title>Welcome!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="FlaskWebpages/app/static/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One&display=swap" rel="stylesheet">
+    <style>
+      body {
+ background: linear-gradient(20deg, #5EEBEB, #FAFCFC);
+    }
+    </style>
+    </head>
 </head>
+
+  
 
 <body>
     <!--image-->
     <div class="Title center">
-        <h1> Climate Change </h1>
+        <h1 class="stockmarket"> Climate Change </h1>
         <h4>Now you have survive in the United States climate. Please buy products to save the environment! </h4>
     </div>
     <div class="container row">
@@ -54,31 +64,40 @@
 
             </table>
         </div>
-        <div class='col l6'>
-            <form method = "POST" action="/action_page.php">
-                <p style="margin-left: 20px;"><b>Choose 2 products:</b>
-                    <select id="DD" method='get'>
-                  <option value="volvo">Coral Reef Safe Sunscreen</option>
-                  <option value="saab">Metal Straws</option>
-                  <option value="opel">Recycled pencils</option>
-                  <option value="audi">Reusable Water Bottles (Nalgene)</option>
-                   <option value="saab">Tote Bag</option>
-                </select>
-                    <br><br><select id="DD" method='get'>
-                  <option value="volvo">Coral Reef Safe Sunscreen</option>
-                  <option value="saab">Metal Straws</option>
-                  <option value="opel">Recycled pencils</option>
-                  <option value="audi">Reusable Water Bottles (Nalgene)</option>
-                   <option value="saab">Tote Bag</option>
-                </select>
-                    <input type="submit"> </p>
-
+        <div class='col l6 center'>
+            <form method='post' action="/cong">
+                <h5>After buying {{product1}} and {{product2}}, your balance is:</h5>
+                <h5>{{balance}}</h5>
+                <h5>and your health index is:</h5>
+                <h5>{{health_index}}</h5>
+                <a href="/index" class="waves-effect waves-light btn">Home</a>
+                <br><button class="btn waves-effect waves-light" type="submit" name="action">Continue
+                        <i class="material-icons right center">send</i>
+                      </button> </br>
+                      <input type="hidden" value={{balance}} name="balance">
+                        <input type="hidden" value={{health_index}} name="health_index">
             </form>
         </div>
-        <table style="width:50%">
-
-
-        </table>
+        <<footer class="footer">  
+                <table>
+                    <thead>
+                      <tr>
+                          <th class="center">Balance</th>
+                          <th class="center">Health Index</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr>
+                        <td class="center">${{balance}}</td>
+                        <td class="center">{{health_index}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <ul class = "leftfooter">
+						<li>&copy; Kaiden. All rights reserved.</li>
+						</ul>
+				</footer>
     </div>
     <style>
         #DD {

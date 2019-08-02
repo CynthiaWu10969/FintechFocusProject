@@ -4,12 +4,17 @@
     <title>Welcome!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="FlaskWebpages/app/static/style.css" type="text/css" />
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Patua+One&display=swap" rel="stylesheet">
+    <style>
+    body {
+ background: linear-gradient(20deg, #5EEBEB, #FAFCFC);
+    }
+    </style>
+    </head>
 
 <body>
-    <!--image-->
     <div class="Title center">
-        <h1> Climate Change </h1>
+        <h1 class="stockmarket"> Eco-Friendly Products </h1>
         <h4>Now you have survive in the United States climate. Please buy products to save the environment! </h4>
     </div>
     <div class="container row">
@@ -32,7 +37,7 @@
                     <td> 8 reuseable straws cost $8</td>
                 </tr>
                 <tr>
-                    <td>Recycled pencils</td>
+                    <td>Recycled Pencils</td>
                     <td> 82,000 trees are cut down a year to make pencils. The lost of these many trees are limiting our oxygen. </td>
                     <td> A pack of 24 pencils cost $11</td>
 
@@ -57,28 +62,46 @@
         <div class='col l6'>
             <form method='post' action="/weatherfinal">
                 <p style="margin-left: 20px;"><b>Choose 2 products:</b>
-                    <select id="DD" name="weather1" method='POST'>
+                    <select id="DD" name="product1" method='POST'>
                   <option value="coralreef">Coral Reef Safe Sunscreen</option>
                   <option value="metalstraws">Metal Straws</option>
                   <option value="pencils">Recycled pencils</option>
                   <option value="bottles">Reusable Water Bottles (Nalgene)</option>
                    <option value="bag">Tote Bag</option>
                 </select>
-                    <br><br><select id="DD" name="weather2" method='POST'>
+                    <br><br><select id="DD" name="product2" method='POST'>
                   <option value="coralreef">Coral Reef Safe Sunscreen</option>
                   <option value="metalstraws">Metal Straws</option>
                   <option value="pencils">Recycled pencils</option>
                   <option value="bottles">Reusable Water Bottles (Nalgene)</option>
                    <option value="bag">Tote Bag</option>
+                   <input type="hidden" value={{balance}} name="balance">
+                    <input type="hidden" value={{health_index}} name="health_index">
                 </select>
                     <input type="submit"> </p>
 
             </form>
         </div>
-        <table style="width:50%">
-
-
-        </table>
+        <footer class="footer">  
+                <table>
+                    <thead>
+                      <tr>
+                          <th class="center">Balance</th>
+                          <th class="center">Health Index</th>
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      <tr>
+                        <td class="center">${{balance}}</td>
+                        <td class="center">{{health_index}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <ul class = "leftfooter">
+						<li>&copy; Kaiden. All rights reserved.</li>
+						</ul>
+				</footer>
     </div>
     <style>
         #DD {
